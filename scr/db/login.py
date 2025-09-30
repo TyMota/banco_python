@@ -15,21 +15,29 @@ def login():
  
 
     query = ("SELECT id, login, senha, saldo FROM usuarios WHERE login = %s")
-    
+        
     mycursor.execute(query, (login_digitado,))
 
     usuario = mycursor.fetchone()
 
-    if usuario:
-        if senha_digitado == usuario[2]:
-            print("Logado com sucesso!")
-        else:
-            print("Login ou senha errado!")
-    else:
-        print("Login ou senha errado!")
+    while usuario == None:
+        print("Login errado!")
+        login_digitado = input("Digite o Login: ")
+            
+        query = ("SELECT id, login, senha, saldo FROM usuarios WHERE login = %s")
+        
+        mycursor.execute(query, (login_digitado,))
 
+        usuario = mycursor.fetchone()
+
+    while usuario[2] != senha_digitado:
+        print("Senha errada!")
+        senha_digitado = input("Digite sua senha: ")
+       
     return usuario
 
 
 if __name__ == "__main__":
     login()
+
+
