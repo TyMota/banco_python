@@ -6,8 +6,6 @@ import mysql.connector
 def btt_sair():
     sys.exit()
 
-    
-
 mydb = mysql.connector.connect(
     host = 'Localhost',
     port = '3307',
@@ -48,7 +46,7 @@ def login_armazenar_dados(login_input, senha_input, janela):
         print("Sem cadastro")
 
 
-def janela_cadastro():
+def janela_login():
     # Criar uma janela
     janela = tk.Tk()
     janela.title("Menu Login")
@@ -81,4 +79,4 @@ def janela_cadastro():
 
 
 if __name__ == "__main__":
-    janela_cadastro()
+    janela_login()

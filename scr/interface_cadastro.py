@@ -6,8 +6,6 @@ import mysql.connector
 def btt_sair():
     sys.exit()
 
-    
-
 mydb = mysql.connector.connect(
     host = 'Localhost',
     port = '3307',
