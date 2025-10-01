@@ -37,3 +37,11 @@ Para realizar a integração entre o Python e o MySQL será utilizado a bibliote
 mysql-connector-python
 
 A mesma pode ter seus comandos vistos clicando [aqui](https://www.w3schools.com/python/python_mysql_getstarted.asp).
+
+## Update
+
+A versão que se encontra no GitHub podendo ser vista clicando [aqui](https://github.com/TyMota/banco_python) toda a aplicação está sendo rodada via powershell. Mas o próximo uptade pretendo fazer a aplicação em uma interface.
+
+Para a realizar o uptade utilizarei a biblioteca já instalada no Python, chamada Tkinter.
+
+Os comandos da mesma pode ser visualizada clicando [aqui](https://www.geeksforgeeks.org/python/python-gui-tkinter/).
