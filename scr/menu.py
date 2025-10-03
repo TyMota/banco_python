@@ -8,7 +8,7 @@ login_usuario = None
 if len(sys.argv) > 1:
     login_usuario = sys.argv[1]
 
-saldo = int(ver_saldo())
+
 
 mydb = mysql.connector.connect(
     host = "localhost",
@@ -33,6 +33,18 @@ def callback():
     txt.after(2000, txt.destroy)
 
     mycursor.close()
+
+def atualizar():
+    mycursor = mydb.cursor()
+
+    mycursor.execute("SELECT saldo FROM usuarios WHERE login = %s", (login_usuario,))
+
+    resultado = mycursor.fetchone()
+    saldo = int(resultado[0])
+
+    tt = ttk.Label(tab1, text=f"Seu saldo atual é R${saldo}")
+    tt.pack()
+    tt.after(2000, tt.destroy)
 
 
 def sub():
@@ -85,7 +97,7 @@ notebook.pack(expand=True, fill='both')
 
 tab1 = ttk.Frame(notebook)
 tk.Label(tab1, text=f"Seja bem vindo, {login_usuario}!").pack()
-tk.Label(tab1, text=f"Seu saldo atual é R${saldo}").pack()
+tk.Button(tab1, text="Ver saldo", command=atualizar).pack()
 
 
 tab2 = ttk.Frame(notebook)

@@ -65,7 +65,7 @@ def janela_login(master, callback):
     #Adciona o texto de senha e adciona aonde escreve a senha
     txt = tk.Label(frame, text="Digite sua senha")
     txt.pack()
-    senha = tk.Entry(frame)
+    senha = tk.Entry(frame, show="*")
     senha.pack()
 
     #btt armazenar dados
